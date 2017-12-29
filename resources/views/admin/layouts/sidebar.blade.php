@@ -27,7 +27,7 @@
             <li class="has-sub">
                 <a href="javascript:;">
                     <i class="fa fa-inbox"></i>
-                    <span>学校管理</span>
+                    <span>文章列表</span>
                 </a>
                 <ul class="sub-menu">
                     <li><a href="{{url('admin/school')}}">学校列表</a></li>
@@ -37,16 +37,16 @@
                 </ul>
             </li>
             <li class="has-sub">
-                <a href="javascript:;">
+                <a href="{{url('admin/publish_article')}}">
                     <b class="caret pull-right"></b>
                     <i class="fa fa-suitcase"></i>
-                    <span>资源库管理</span>
+                    <span>文章发布</span>
                 </a>
-                <ul class="sub-menu">
-                    <li><a href="{{url('admin/resource')}}">资源列表</a></li>
-                    <li><a href="{{url('admin/sourcetype')}}">资源库类型</a></li>
-                    <li><a href="#">Tabs & Accordions</a></li>
-                </ul>
+                {{--<ul class="sub-menu">--}}
+                    {{--<li><a href="{{url('admin/resource')}}">资源列表</a></li>--}}
+                    {{--<li><a href="{{url('admin/sourcetype')}}">资源库类型</a></li>--}}
+                    {{--<li><a href="#">Tabs & Accordions</a></li>--}}
+                {{--</ul>--}}
             </li>
             <li class="has-sub">
                 <a href="javascript:;">

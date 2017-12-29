@@ -33,13 +33,22 @@ Route::get('/post_grid', function () {
 
 Route::group(['middleware' => 'admin'], function() {
     //后台管理员
-    Route::any('admin/logout', 'Admin\AuthController@logout');
-    Route::any('admin/register', 'Admin\AuthController@register');
+    Route::any('/admin/logout', 'Admin\AuthController@logout');
+    Route::any('/admin/register', 'Admin\AuthController@register');
 
-    Route::get('/admin', 'AdminController@index');
+    Route::get('/admin/', 'AdminController@index');
+
+    Route::get('/admin/publish_article', 'Admin\ArticleController@index');
+//  文章
+//    Route::resouce('/admin/article', 'Admin\ArticleController');
+////  标签
+//    Route::resouce('admin/tag', 'TagController@index');
+////  配置项
+//    Route::resouce('admin/config', 'ConfigController@index');
 
 });
 
+//Route::resource('/admin/article', 'Admin\ArticleController');
 Route::any('admin/login', 'Admin\AuthController@login');
 
 

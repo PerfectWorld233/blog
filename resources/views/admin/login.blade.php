@@ -53,10 +53,10 @@
                 <form action="{{url('admin/login')}}" method="POST" class="margin-bottom-0">
                     {!! csrf_field() !!}
                     <div class="form-group m-b-20">
-                        <input type="text" class="form-control input-lg" placeholder="Account Number" required />
+                        <input type="text" class="form-control input-lg" placeholder="Account Number" name="account_number" value="{{ old('account_number') }}" />
                     </div>
                     <div class="form-group m-b-20">
-                        <input type="password" class="form-control input-lg" placeholder="Password" required />
+                        <input type="password" class="form-control input-lg" placeholder="Password" required name="password"/>
                     </div>
                     <div class="checkbox m-b-20">
                         <label>

@@ -32,11 +32,9 @@ class AuthController extends Controller
         if ($request->isMethod('post')) {
             $validator = $this->validateLogin($request->input());
             if ($validator->fails()) {
-//                echo 1231;die;
                 return back()->withErrors($validator)->withInput();
             }
             if (Auth::guard('admin')->attempt(['account_number'=>$request->account_number, 'password'=>$request->password])) {
-//                dd(Auth::guard('admin')->attempt(['account_number'=>$request->account_number, 'password'=>$request->password]));die;
                 return Redirect::to('admin')->with('success', '登录成功！');     //login success, redirect to admin
             } else {
                 return back()->with('error', '账号或密码错误')->withInput();
@@ -48,14 +46,14 @@ class AuthController extends Controller
     protected function validateLogin(array $data)
     {
         return Validator::make($data, [
-            'account_number' => 'required|num',
+            'account_number' => 'required|alpha_num',
             'password' => 'required',
         ], [
             'required' => ':attribute 为必填项',
-            'min' => ':attribute 长度不符合要求'
+            'min' => ':attribute 长度不符合要求',
         ], [
             'account_number' => '账号',
-            'password' => '密码'
+            'password' => '密码',
         ]);
     }
 
