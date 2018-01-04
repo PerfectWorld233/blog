@@ -29,6 +29,7 @@ class AuthController extends Controller
     //登录
     public function login(Request $request)
     {
+//        print_r(bcrypt($request->password));die;
         if ($request->isMethod('post')) {
             $validator = $this->validateLogin($request->input());
             if ($validator->fails()) {

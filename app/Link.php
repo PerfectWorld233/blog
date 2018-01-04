@@ -5,17 +5,17 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
-class Article extends Model
+class Link extends Authenticatable
 {
     //表名
-    protected $table = 'article';
+    protected $table = 'links';
 
     //指定主键
-    protected $primaryKey = 'article_id';
+    protected $primaryKey = 'link_id';
 
     //指定允许批量赋值的字段
     protected $fillable = [
-        'title', 'content', 'tags',
+        'name', 'account_number', 'password',
     ];
 
     //指定不允许批量赋值的字段
@@ -38,7 +38,7 @@ class Article extends Model
      *
      * @var array
      */
-//    protected $hidden = [
-//        'password', 'remember_token'
-//    ];
+    protected $hidden = [
+        'password', 'remember_token'
+    ];
 }

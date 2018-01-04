@@ -25,19 +25,19 @@
                 </a>
             </li>
             <li class="has-sub">
-                <a href="javascript:;">
+                <a href="{{url('admin/article')}}">
                     <i class="fa fa-inbox"></i>
                     <span>文章列表</span>
                 </a>
                 <ul class="sub-menu">
-                    <li><a href="{{url('admin/school')}}">学校列表</a></li>
+                    {{--<li><a href="{{url('admin/school')}}">学校列表</a></li>--}}
                     <li><a href="#">Inbox v2</a></li>
                     <li><a href="#">Compose</a></li>
                     <li><a href="#">Detail</a></li>
                 </ul>
             </li>
             <li class="has-sub">
-                <a href="{{url('admin/publish_article')}}">
+                <a href="{{url('admin/article/create')}}">
                     <b class="caret pull-right"></b>
                     <i class="fa fa-suitcase"></i>
                     <span>文章发布</span>
@@ -63,31 +63,11 @@
                 </ul>
             </li>
             <li class="has-sub">
-                <a href="javascript:;">
+                <a href="{{url('admin/tag')}}">
                     <b class="caret pull-right"></b>
                     <i class="fa fa-th"></i>
-                    <span>机构申请</span>
+                    <span>标签管理</span>
                 </a>
-                <ul class="sub-menu">
-                    <li><a href="index.html#ajax/table_basic.html">Basic Tables</a></li>
-                    <li class="has-sub">
-                        <a href="javascript:;"><b class="caret pull-right"></b> Managed Tables</a>
-                        <ul class="sub-menu">
-                            <li><a href="index.html#ajax/table_manage.html">Default</a></li>
-                            <li><a href="index.html#ajax/table_manage_autofill.html">Autofill</a></li>
-                            <li><a href="index.html#ajax/table_manage_buttons.html">Buttons</a></li>
-                            <li><a href="index.html#ajax/table_manage_colreorder.html">ColReorder</a></li>
-                            <li><a href="index.html#ajax/table_manage_fixed_columns.html">Fixed Column</a></li>
-                            <li><a href="index.html#ajax/table_manage_fixed_header.html">Fixed Header</a></li>
-                            <li><a href="index.html#ajax/table_manage_keytable.html">KeyTable</a></li>
-                            <li><a href="index.html#ajax/table_manage_responsive.html">Responsive</a></li>
-                            <li><a href="index.html#ajax/table_manage_rowreorder.html">RowReorder</a></li>
-                            <li><a href="index.html#ajax/table_manage_scroller.html">Scroller</a></li>
-                            <li><a href="index.html#ajax/table_manage_select.html">Select</a></li>
-                            <li><a href="index.html#ajax/table_manage_combine.html">Extension Combination</a></li>
-                        </ul>
-                    </li>
-                </ul>
             </li>
             <li class="has-sub">
                 <a href="javascript:;">
@@ -114,10 +94,10 @@
                 </ul>
             </li>
             <li class="has-sub">
-                <a href="javascript:;">
+                <a href="{{url('admin/config')}}">
                     <b class="caret pull-right"></b>
                     <i class="fa fa-area-chart"></i>
-                    <span>Chart</span>
+                    <span>网站配置项</span>
                 </a>
                 <ul class="sub-menu">
                     <li><a href="index.html#ajax/chart-flot.html">Flot Chart</a></li>

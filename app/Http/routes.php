@@ -31,20 +31,27 @@ Route::get('/post_grid', function () {
     return view('contack_us');
 });
 
-Route::group(['middleware' => 'admin'], function() {
+Route::group(['prefix'=>'admin','middleware' => 'admin'], function() {
     //后台管理员
-    Route::any('/admin/logout', 'Admin\AuthController@logout');
-    Route::any('/admin/register', 'Admin\AuthController@register');
+    Route::any('logout', 'Admin\AuthController@logout');
+    Route::any('register', 'Admin\AuthController@register');
 
-    Route::get('/admin/', 'AdminController@index');
+//  网站信息
+//    Route::get('/', 'AdminController@index');
+    Route::get('/', 'Admin\InfoController@index');
 
-    Route::get('/admin/publish_article', 'Admin\ArticleController@index');
+//    Route::get('/admin/publish_article', 'Admin\ArticleController@index');
 //  文章
-//    Route::resouce('/admin/article', 'Admin\ArticleController');
-////  标签
-//    Route::resouce('admin/tag', 'TagController@index');
-////  配置项
-//    Route::resouce('admin/config', 'ConfigController@index');
+    Route::resource('article', 'Admin\ArticleController');
+//    Route::resource('article/cc', 'Admin\ArticleController@cc');
+//  标签
+    Route::resource('tag', 'Admin\TagController');
+//  配置项
+    Route::resource('config', 'Admin\ConfigController');
+//  友链管理
+    Route::resource('link', 'Admin\LinkController');
+//  网站信息
+//    Route::get('info', 'Admin\InfoController@index');
 
 });
 
